@@ -1,0 +1,14 @@
+name: express-jest-report-slack
+
+on: 
+  push:
+    branches: [main]
+
+jobs:
+
+  test1:
+    runs-on: ubuntu-latest
+    name: express-jest-slack
+    steps:
+      - name: express-jest-slack-my-action
+        uses: youssefshibl/jest-report-in-stack-action@main
