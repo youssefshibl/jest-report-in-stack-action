@@ -4141,7 +4141,7 @@ async function run() {
     testReport = __nccwpck_require__(966);
     if (true) {
         core.startGroup("send report to slack stage");
-        SendReportToSlack();
+        await exec.exec("ls");        
         core.endGroup();
 
     }
@@ -4150,9 +4150,7 @@ async function run() {
 
 run();
 
-function SendReportToSlack() {
-  console.log("send report to slack");
-}
+
 
 })();
 

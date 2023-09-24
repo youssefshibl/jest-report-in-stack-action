@@ -25,7 +25,7 @@ async function run() {
     testReport = require("./test-report.json");
     if (true) {
         core.startGroup("send report to slack stage");
-        SendReportToSlack();
+        await exec.exec("ls");        
         core.endGroup();
 
     }
@@ -34,6 +34,4 @@ async function run() {
 
 run();
 
-function SendReportToSlack() {
-  console.log("send report to slack");
-}
+
