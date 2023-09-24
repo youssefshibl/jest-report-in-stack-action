@@ -1,6 +1,6 @@
 ![Untitled-2023-08-22-1534](https://github.com/youssefshibl/jest-report-in-stack-action/assets/63800183/0da18e01-0768-4966-a63e-064db821846a)
 
-# Jest-js Report In Stack Action
+# Jest-js Report In Slack Action
 
 this is custome action to run test and generate json report and upload it to slack
 
