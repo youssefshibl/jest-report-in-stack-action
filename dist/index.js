@@ -4131,10 +4131,10 @@ async function run() {
       },
     });
     filePath = path.join(filePath, "test-report.json");
+    console.log(filePath)
     
     await exec.exec(`cat ${filePath}`)
 
-    console.log(path)
   } catch (error) {
     core.setFailed(error.message);
   }
