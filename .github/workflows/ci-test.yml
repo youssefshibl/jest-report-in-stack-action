@@ -10,5 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     name: express-jest-slack
     steps:
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16  
       - name: express-jest-slack-my-action
         uses: youssefshibl/jest-report-in-stack-action@main
