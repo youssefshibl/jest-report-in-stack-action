@@ -18,5 +18,5 @@ jobs:
       - name: express-jest-slack-my-action
         uses: youssefshibl/jest-report-in-stack-action@main
         with:
-          owner: ${{ secrets.slack_token }}
-          repo: ${{ secrets.slack_channel_id}}
+          slack_token: ${{ secrets.slack_token }}
+          channel_id: ${{ secrets.slack_channel_id}}
