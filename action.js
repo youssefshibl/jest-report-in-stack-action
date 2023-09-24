@@ -12,26 +12,13 @@ async function run() {
     await exec.exec("npm test");
     core.endGroup();
 
-    //Check the test result
-    // testReport = require("./test-report.json");
-    // if (!testReport.success) {
-    //   test_status = false;
-    // }
+    core.startGroup("send report to slack stage");
+    await exec.exec("ls");
+    core.endGroup();
+    
   } catch (error) {
     core.setFailed(error.message);
   }
-  // send report to slack stage
-  try {
-    testReport = require("./test-report.json");
-    if (true) {
-        core.startGroup("send report to slack stage");
-        await exec.exec("ls");        
-        core.endGroup();
-
-    }
-  } catch (error) {}
 }
 
 run();
-
-
