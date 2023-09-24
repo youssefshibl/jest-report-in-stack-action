@@ -4123,10 +4123,14 @@ async function run() {
     core.startGroup("send report to slack stage");
     await exec.exec("ls");
     core.endGroup();
-    
+
   } catch (error) {
     core.setFailed(error.message);
   }
+
+  core.startGroup("test");
+  await exec.exec("ls");
+  core.endGroup()
 }
 
 run();
