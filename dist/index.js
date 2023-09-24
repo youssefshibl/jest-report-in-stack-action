@@ -4135,12 +4135,11 @@ async function run() {
     // }
   } catch (error) {
     core.setFailed(error.message);
-    core.endGroup();
   }
   // send report to slack stage
   try {
     testReport = __nccwpck_require__(966);
-    if (testReport != undefined) {
+    if (true) {
         core.startGroup("send report to slack stage");
         SendReportToSlack();
         core.endGroup();
