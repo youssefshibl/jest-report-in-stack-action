@@ -4122,8 +4122,13 @@ async function run() {
     await exec.exec("npm test");
     core.endGroup();
     console.log(filePath);
+    await exec.exec("ls")
+    await exec.exec("pwd")
+
     if(fs.existsSync(filePath)){
       console.log("File exists");
+    }else{
+      console.log("File does not exist");
     }
 
   } catch (error) {
