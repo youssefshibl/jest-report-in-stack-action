@@ -19,12 +19,11 @@ async function run() {
     // }
   } catch (error) {
     core.setFailed(error.message);
-    core.endGroup();
   }
   // send report to slack stage
   try {
     testReport = require("./test-report.json");
-    if (testReport != undefined) {
+    if (true) {
         core.startGroup("send report to slack stage");
         SendReportToSlack();
         core.endGroup();
