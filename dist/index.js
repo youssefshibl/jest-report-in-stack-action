@@ -4129,7 +4129,7 @@ async function run() {
   try {
     core.startGroup("test");
     if (fs.existsSync(filePath)) {
-      console.log("File exists");
+      core.setOutput("test-report.json exist");
     }
     core.endGroup();
   } catch (error) {
