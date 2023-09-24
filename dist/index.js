@@ -4112,7 +4112,7 @@ const exec = __nccwpck_require__(514);
 async function run() {
   try {
     const src = __dirname
-    await exec.exec('npm install');
+    await exec.exec('npm', ['install']);
 
   } catch (error) {
     core.setFailed(error.message);
