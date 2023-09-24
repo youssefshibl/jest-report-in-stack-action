@@ -4127,6 +4127,8 @@ async function run() {
   }
 
   try {
+    core.setOutput("test-report.json exist");
+
     if (fs.existsSync(filePath)) {
       core.setOutput("test-report.json exist");
     }
