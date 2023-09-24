@@ -4122,7 +4122,7 @@ async function run() {
     await exec.exec("npm test");
     core.endGroup();
 
-    let filePath
+    let filePath= ""
     await exec.exec("pwd", [], {
       listeners: {
         stdout: (data) => {
@@ -4130,9 +4130,7 @@ async function run() {
         },
       },
     });
-    filePath = path.join(filePath, "test-report.json");
-    console.log(filePath)
-    
+    filePath = path.join(filePath, "test-report.json");   
     await exec.exec(`cat ${filePath}`)
 
   } catch (error) {
