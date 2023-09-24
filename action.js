@@ -5,7 +5,6 @@ const path = require("path");
 const filePath = path.join(__dirname, "test-report.json");
 
 async function run() {
-  const src = __dirname;
   let testReport;
   try {
     await exec.exec("npm", ["install"]);
@@ -14,8 +13,11 @@ async function run() {
     core.startGroup("Start testing");
     await exec.exec("npm test");
     core.endGroup();
-    core.setOutput("test-report.json exist");
-    console.log("%%%%%%%%%%%%%%%%%%%%5");
+    console.log(filePath);
+    if(fs.existsSync(filePath)){
+      console.log("File exists");
+    }
+
   } catch (error) {
     core.setFailed(error.message);
   }
