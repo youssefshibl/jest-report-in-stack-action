@@ -3,6 +3,8 @@ const exec = require("@actions/exec");
 
 async function run() {
   const src = __dirname;
+  let test_status = true;
+  let testReport;
   try {
     await exec.exec("npm", ["install"]);
     // start testing
@@ -10,16 +12,28 @@ async function run() {
     await exec.exec("npm test");
     core.endGroup();
 
-    // Check the test result
-    // const testReport = require("./test-report.json");
-    // if (testReport.success) {
-    //   console.log("Tests passed successfully.");
-    // } else {
-    //   console.error("Tests failed.");
+    //Check the test result
+    // testReport = require("./test-report.json");
+    // if (!testReport.success) {
+    //   test_status = false;
     // }
   } catch (error) {
-    core.setFailed("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" + error.message);
+    core.setFailed(error.message);
+    core.endGroup();
   }
+  // send report to slack stage
+  try {
+    if (testReport != undefined) {
+        core.startGroup("send report to slack stage");
+        SendReportToSlack();
+        core.endGroup();
+
+    }
+  } catch (error) {}
 }
 
 run();
+
+function SendReportToSlack() {
+  console.log("send report to slack");
+}
