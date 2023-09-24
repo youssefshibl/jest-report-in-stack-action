@@ -3953,6 +3953,14 @@ exports["default"] = _default;
 
 /***/ }),
 
+/***/ 966:
+/***/ ((module) => {
+
+module.exports = eval("require")("./test-report.json");
+
+
+/***/ }),
+
 /***/ 491:
 /***/ ((module) => {
 
@@ -4131,6 +4139,7 @@ async function run() {
   }
   // send report to slack stage
   try {
+    testReport = __nccwpck_require__(966);
     if (testReport != undefined) {
         core.startGroup("send report to slack stage");
         SendReportToSlack();
