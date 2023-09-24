@@ -3953,14 +3953,6 @@ exports["default"] = _default;
 
 /***/ }),
 
-/***/ 966:
-/***/ ((module) => {
-
-module.exports = eval("require")("./test-report.json");
-
-
-/***/ }),
-
 /***/ 491:
 /***/ ((module) => {
 
@@ -4118,8 +4110,8 @@ const core = __nccwpck_require__(186);
 const exec = __nccwpck_require__(514);
 
 async function run() {
+  const src = __dirname;
   try {
-    const src = __dirname;
     await exec.exec("npm", ["install"]);
     // start testing
     core.startGroup("Start testing");
@@ -4127,19 +4119,19 @@ async function run() {
     core.endGroup();
 
     // Check the test result
-    const testReport = __nccwpck_require__(966);
-    if (testReport.success) {
-      console.log("Tests passed successfully.");
-    } else {
-      console.error("Tests failed.");
-      //core.setFailed("Tests failed.");
-    }
+    // const testReport = require("./test-report.json");
+    // if (testReport.success) {
+    //   console.log("Tests passed successfully.");
+    // } else {
+    //   console.error("Tests failed.");
+    // }
   } catch (error) {
-    //core.setFailed(error.message);
+    core.setFailed("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@" + error.message);
   }
 }
 
 run();
+
 })();
 
 module.exports = __webpack_exports__;
