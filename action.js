@@ -14,16 +14,7 @@ async function run() {
     await exec.exec("npm test");
     core.endGroup();
 
-    let filePath= ""
-    await exec.exec("pwd", [], {
-      listeners: {
-        stdout: (data) => {
-          filePath += data.toString();
-        },
-      },
-    });
-    filePath = path.join(filePath, "test-report.json");   
-    await exec.exec(`cat ${filePath}`)
+    await exec.exec(`cat ./test-report.json`);
 
   } catch (error) {
     core.setFailed(error.message);
