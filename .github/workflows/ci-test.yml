@@ -17,3 +17,6 @@ jobs:
           node-version: 16  
       - name: express-jest-slack-my-action
         uses: youssefshibl/jest-report-in-stack-action@main
+          with:
+            owner: ${{ secrets.slack_token }}
+            repo: ${{ secrets.slack_channel_id}}

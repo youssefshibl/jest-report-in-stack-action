@@ -1,4 +1,11 @@
 name: report test 
+inputs:
+  slack_token:
+    description: 'slack token to upload file'
+    required: true
+  channel_id:
+    description: 'channel where upload file'
+    required: true    
 runs:
    using: node16
    main: dist/index.js
