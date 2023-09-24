@@ -4122,16 +4122,8 @@ async function run() {
     core.startGroup("Start testing");
     await exec.exec("npm test");
     core.endGroup();
-  } catch (error) {
-    core.setFailed(error.message);
-  }
-
-  try {
     core.setOutput("test-report.json exist");
-
-    if (fs.existsSync(filePath)) {
-      core.setOutput("test-report.json exist");
-    }
+    console.log("%%%%%%%%%%%%%%%%%%%%5");
   } catch (error) {
     core.setFailed(error.message);
   }
